@@ -22,4 +22,21 @@ def print_magic_square(magic_square):
             print('{:4d}'.format(magic_square[row][col]), end='')
         print("\n")
 
-print_magic_square(calculate_matic_square(7))
+def main():
+    print ("Enter the size of magic square:")
+
+    while True:
+        try:
+            N = int(input())
+            if N < 1:
+                print("Pleae input positive number.")
+            elif N%2 == 0:
+                print("Please input odd number.")
+            else:
+                print_magic_square(calculate_matic_square(N))
+                break
+        except ValueError:
+            print("Please input an integer.")
+
+if __name__ == '__main__':
+    main()
